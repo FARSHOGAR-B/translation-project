@@ -1,0 +1,27 @@
+<%- include("partials/header"); -%>
+    <main>
+        <div>
+            <div class="my-3 container">
+                <form class="search-bar" action="/find" method="post">
+                    <label for="word-box" class="form-label fs-4">Enter word</label>
+                    <input type="text" class="form-control" id="word-box" placeholder="Search here" name="query">
+                    <button type="submit" class="searchBtn btn btn-primary my-2">Search</button>
+                </form>
+                <div class="outputBox">
+                    <div class="meaning px-3 my-1"> <span class="fs-5 bg-light px-2 rounded">Meaning:</span>
+                        <span class="fs-5 mx-2"> <% for(let i=0 ; i < 1 ; i++ ) { %>
+                            <%= output[output.length-2] %>
+                                <% } %></span>
+                    </div>
+                    <div class="pronounce px-3 my-1"><span class="fs-5 bg-light px-2 rounded">Pronounciation:</span>
+                        <span class="fs-5 mx-2"> <% for(let i=0 ; i < 1 ; i++ ) { %>
+                            <%= output[output.length-1] %>
+                                <% } %></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+    <%- include("partials/footer"); -%>
